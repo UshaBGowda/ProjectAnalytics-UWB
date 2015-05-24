@@ -10,6 +10,8 @@ using System.Data;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using Octokit;
+using System.Threading.Tasks;
 
 namespace ProjAnalytics
 {
@@ -48,11 +50,40 @@ namespace ProjAnalytics
                         ZIP = dr[9].ToString()
                     }
                 };
+                //experiment
+
+                
+
+
+                /////
+
+
                 people[i] = pp;
                 i++;
             }
+            var github = new GitHubClient(new ProductHeaderValue("TestGitHutAPI"));
+            github.Credentials = new Credentials("a9af0455e799ccba7e485a4ebdd2360a8a677bf4");
+            
+            var searchRepositoriesRequest = new SearchRepositoriesRequest("projectanalytics")
+            {
+                //Language = Language.CSharp,
+                Order = SortDirection.Descending,
+                PerPage = 10
+            };
+
+            var searchRepositoryResult  = StartMyTask(github ,searchRepositoriesRequest);
+            string strres = searchRepositoryResult.Result.ToString();
+
             return people;
         }
+
+        public async Task<SearchRepositoryResult> StartMyTask(GitHubClient github, SearchRepositoriesRequest searchRepositoriesRequest)
+        {
+            SearchRepositoryResult searchRepositoryResult = await (github.Search.SearchRepo(searchRepositoriesRequest));
+            return searchRepositoryResult;
+        }
+
+        
 
         public Person setPerson(Person newPerson)
         {
