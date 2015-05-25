@@ -66,7 +66,10 @@
     <Content Include="DB_Comps\Procedures\spCreatePerson.sql" />
     <Content Include="DB_Comps\Procedures\spDeletePerson.sql" />
     <Content Include="DB_Comps\Tables\tblAddress.sql" />
+    <Content Include="DB_Comps\Tables\tblUserProjXRef.sql" />
     <Content Include="DB_Comps\Tables\tblPerson.sql" />
+    <Content Include="DB_Comps\Tables\tblProject.sql" />
+    <Content Include="DB_Comps\Tables\tblRole.sql" />
     <Content Include="UserService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -119,6 +122,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>2.0</SsdtUnitTestVersion>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

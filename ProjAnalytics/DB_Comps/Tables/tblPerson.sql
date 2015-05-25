@@ -32,7 +32,7 @@ DECLARE @ErrMsg          VARCHAR(256)
 				[FirstName] [varchar](50) NOT NULL,
 				[LastName] [varchar](50) NOT NULL,
 				[AddressID] [int] NULL,
-				[EmployeeRole] [varchar](50) NULL,
+				[RoleID] [int] NOT NULL DEFAULT 1,
 				[EmailAddress] [varchar](50) NULL,
 			 CONSTRAINT [PK_tblPerson_ID] PRIMARY KEY CLUSTERED 
 			(
@@ -53,7 +53,7 @@ DECLARE @ErrMsg          VARCHAR(256)
 									[FirstName],
 									[LastName] ,
 									[AddressID] ,
-									[EmployeeRole],
+									[RoleID],
 									[EmailAddress] 
 							    )
 							  SELECT
@@ -61,7 +61,7 @@ DECLARE @ErrMsg          VARCHAR(256)
 									[FirstName],
 									[LastName] ,
 									[AddressID] ,
-									[EmployeeRole],
+									[RoleID],
 									[EmailAddress] 
 							 FROM #tblPerson
         
@@ -84,7 +84,7 @@ DECLARE @ErrMsg          VARCHAR(256)
 				[FirstName] [varchar](50) NOT NULL,
 				[LastName] [varchar](50) NOT NULL,
 				[AddressID] [int] NULL,
-				[EmployeeRole] [varchar](50) NULL,
+				[RoleID] [int] NOT NULL DEFAULT 1,
 				[EmailAddress] [varchar](50) NULL,
 			 CONSTRAINT [PK_tblPerson_ID] PRIMARY KEY CLUSTERED 
 			(
