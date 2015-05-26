@@ -28,12 +28,14 @@ DECLARE @ErrMsg          VARCHAR(256)
 		PRINT 'Creating table [dbo].[tblPerson]' 
 
 			CREATE TABLE [dbo].[tblPerson](
-				[ID] [int] IDENTITY(1,1) NOT NULL,
+				[ID] [int] IDENTITY(1000,1) NOT NULL,
 				[FirstName] [varchar](50) NOT NULL,
 				[LastName] [varchar](50) NOT NULL,
+				LoginName [varchar](50) NOT NULL,
 				[AddressID] [int] NULL,
 				[RoleID] [int] NOT NULL DEFAULT 1,
-				[EmailAddress] [varchar](50) NULL,
+				[EmailAddress] [varchar](50) NOT NULL,
+				UserPassword varchar (50) NOT NULL
 			 CONSTRAINT [PK_tblPerson_ID] PRIMARY KEY CLUSTERED 
 			(
 				[ID] ASC
@@ -54,7 +56,8 @@ DECLARE @ErrMsg          VARCHAR(256)
 									[LastName] ,
 									[AddressID] ,
 									[RoleID],
-									[EmailAddress] 
+									[EmailAddress],
+									[UserPassword]
 							    )
 							  SELECT
 									[ID] ,
@@ -62,7 +65,9 @@ DECLARE @ErrMsg          VARCHAR(256)
 									[LastName] ,
 									[AddressID] ,
 									[RoleID],
-									[EmailAddress] 
+									[EmailAddress] ,
+									[UserPassword]
+									
 							 FROM #tblPerson
         
         -- SET IDENTITY_INSERT to OFF.
@@ -83,9 +88,11 @@ DECLARE @ErrMsg          VARCHAR(256)
 				[ID] [int] IDENTITY(1,1) NOT NULL,
 				[FirstName] [varchar](50) NOT NULL,
 				[LastName] [varchar](50) NOT NULL,
+				LoginName [varchar](50) NOT NULL,
 				[AddressID] [int] NULL,
 				[RoleID] [int] NOT NULL DEFAULT 1,
 				[EmailAddress] [varchar](50) NULL,
+				UserPassword varchar (50) NOT NULL
 			 CONSTRAINT [PK_tblPerson_ID] PRIMARY KEY CLUSTERED 
 			(
 				[ID] ASC
