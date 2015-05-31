@@ -12,9 +12,7 @@ namespace ProjAnalytics
     [ServiceContract]
     public interface IUserService
     {
-        [OperationContract]
-        Person getPerson(int ID);
-
+    
         [OperationContract]
         Person[] getPeopleDetails();
 

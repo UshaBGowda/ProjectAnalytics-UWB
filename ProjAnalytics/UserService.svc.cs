@@ -25,7 +25,7 @@ namespace ProjAnalytics
         
         private GitHubClient initClient()
         {
-            var credentials = new Credentials("d7487e65df80ef0f7afdd689d7211622d9b2db93");
+            var credentials = new Credentials("6dda46d30e7aac78a2c48ce5baf1a9a0ffd302b1");
             var connection = new Octokit.Connection(new Octokit.ProductHeaderValue("ProjAnalyticsApp"))
             {
               Credentials = credentials
@@ -185,18 +185,6 @@ namespace ProjAnalytics
         }
 
 
-
-
-
-
-        public Person getPerson(int ID)
-        {
-            Person p = new Person();
-            SqlParameter[] param = new SqlParameter[0];
-            DataTable dt = _dbConnect.RunProcedureGetDataTable("sp_get", param);
-            return p;
-        }
-
         public Person[] getPeopleDetails()
         {
             SqlParameter[] param = new SqlParameter[0];
@@ -311,6 +299,7 @@ namespace ProjAnalytics
                        Commit objCommit = new Commit();
                        objCommit.CommitDT = DateTime.Now;
                        objCommit.Comments = gC.Commit.Message;
+                       objCommit.SHA = gC.Sha.ToString();
                        if (gC.Committer != null)
                        {
                            objCommit.Committer = new User { Login = gC.Committer.Login, ID = gC.Committer.Id, AvatarURL = gC.Committer.AvatarUrl };
