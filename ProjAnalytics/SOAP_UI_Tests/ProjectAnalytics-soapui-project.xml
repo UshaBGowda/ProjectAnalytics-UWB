@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d64c1a87-ba13-4ba6-b280-9d5e728e74fe" activeEnvironment="Default" name="ProjectAnalytics" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1b3be889-8a6b-4fdb-bee5-963cda82cc89" wsaVersion="NONE" name="BasicHttpBinding_IUserService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IUserService" soapVersion="1_1" anonymous="optional" definition="http://localhost:34872/UserService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:34872/UserService.svc?wsdl"><con:part><con:url>http://localhost:34872/UserService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UserService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      <xsd:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserService_getPeopleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPeopleDetails"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getPeopleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPeopleDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_setPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPerson"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_setPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPersonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_deletePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:deletePerson"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_deletePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deletePersonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_verifyAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:verifyAuth"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_verifyAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verifyAuthResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProjects"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProjectsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getContributors_InputMessage">
+    <wsdl:part name="parameters" element="tns:getContributors"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getContributors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getContributorsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getCommits_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCommits"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getCommits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCommitsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_assignProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:assignProjects"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_assignProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:assignProjectsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getDeveloperCommits_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeveloperCommits"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getDeveloperCommits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeveloperCommitsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getCommitDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCommitDetails"/>
+  </wsdl:message>
+  <wsdl:message name="IUserService_getCommitDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCommitDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IUserService">
+    <wsdl:operation name="getPeopleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getPeopleDetails" message="tns:IUserService_getPeopleDetails_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getPeopleDetailsResponse" message="tns:IUserService_getPeopleDetails_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="setPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/setPerson" message="tns:IUserService_setPerson_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/setPersonResponse" message="tns:IUserService_setPerson_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/deletePerson" message="tns:IUserService_deletePerson_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/deletePersonResponse" message="tns:IUserService_deletePerson_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="verifyAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/verifyAuth" message="tns:IUserService_verifyAuth_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/verifyAuthResponse" message="tns:IUserService_verifyAuth_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getProjects" message="tns:IUserService_getProjects_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getProjectsResponse" message="tns:IUserService_getProjects_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getContributors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getContributors" message="tns:IUserService_getContributors_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getContributorsResponse" message="tns:IUserService_getContributors_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCommits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getCommits" message="tns:IUserService_getCommits_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getCommitsResponse" message="tns:IUserService_getCommits_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="assignProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/assignProjects" message="tns:IUserService_assignProjects_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/assignProjectsResponse" message="tns:IUserService_assignProjects_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDeveloperCommits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getDeveloperCommits" message="tns:IUserService_getDeveloperCommits_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getDeveloperCommitsResponse" message="tns:IUserService_getDeveloperCommits_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCommitDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getCommitDetails" message="tns:IUserService_getCommitDetails_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getCommitDetailsResponse" message="tns:IUserService_getCommitDetails_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPeopleDetails">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getPeopleDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPerson">
+      <soap:operation soapAction="http://tempuri.org/IUserService/setPerson" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <soap:operation soapAction="http://tempuri.org/IUserService/deletePerson" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyAuth">
+      <soap:operation soapAction="http://tempuri.org/IUserService/verifyAuth" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjects">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getProjects" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContributors">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getContributors" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCommits">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getCommits" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignProjects">
+      <soap:operation soapAction="http://tempuri.org/IUserService/assignProjects" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeveloperCommits">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getDeveloperCommits" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCommitDetails">
+      <soap:operation soapAction="http://tempuri.org/IUserService/getCommitDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
+      <soap:address location="http://localhost:34872/UserService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:34872/UserService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+  <xs:element name="getPeopleDetails">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPeopleDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPeopleDetailsResult" nillable="true" type="q1:ArrayOfPerson" xmlns:q1="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPerson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newPerson" nillable="true" type="q2:Person" xmlns:q2="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setPersonResult" nillable="true" type="q3:Person" xmlns:q3="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePerson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deletePersonResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyAuth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verifyAuthResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personID" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getProjectsResult" nillable="true" type="q4:ArrayOfProject" xmlns:q4="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getContributors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ProjectOwner" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getContributorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getContributorsResult" nillable="true" type="q5:ArrayOfUser" xmlns:q5="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ProjectOwner" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCommitsResult" nillable="true" type="q6:ArrayOfCommit" xmlns:q6="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="assignProjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usrPrjs" nillable="true" type="q7:UserProjects" xmlns:q7="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="assignProjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignProjectsResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDeveloperCommits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ProjectOwner" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="devLoginName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDeveloperCommitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDeveloperCommitsResult" nillable="true" type="q8:ArrayOfCommit" xmlns:q8="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommitDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commitObj" nillable="true" type="q9:Commit" xmlns:q9="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+        <xs:element minOccurs="0" name="projectObj" nillable="true" type="q10:Project" xmlns:q10="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommitDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCommitDetailsResult" nillable="true" type="q11:Commit" xmlns:q11="http://schemas.datacontract.org/2004/07/ProjAnalytics"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:34872/UserService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProjAnalytics" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ProjAnalytics">
+  <xs:import schemaLocation="http://localhost:34872/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson"/>
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Person_Address" nillable="true" type="tns:Address"/>
+      <xs:element minOccurs="0" name="RoleID" type="xs:int"/>
+      <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person"/>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZIP" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address"/>
+  <xs:complexType name="ArrayOfProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="tns:Project"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProject" nillable="true" type="tns:ArrayOfProject"/>
+  <xs:complexType name="Project">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CloneURL" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CreatedDT" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="DefaultBranch" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="LastCommitDT" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Project" nillable="true" type="tns:Project"/>
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser"/>
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvatarURL" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User"/>
+  <xs:complexType name="ArrayOfCommit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Commit" nillable="true" type="tns:Commit"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommit" nillable="true" type="tns:ArrayOfCommit"/>
+  <xs:complexType name="Commit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CommitDT" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Committer" nillable="true" type="tns:User"/>
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:ArrayOfFile"/>
+      <xs:element minOccurs="0" name="SHA" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Stats" nillable="true" type="tns:CommitStats"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Commit" nillable="true" type="tns:Commit"/>
+  <xs:complexType name="ArrayOfFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="tns:File"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFile" nillable="true" type="tns:ArrayOfFile"/>
+  <xs:complexType name="File">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Additions" type="xs:int"/>
+      <xs:element minOccurs="0" name="Changes" type="xs:int"/>
+      <xs:element minOccurs="0" name="Deletions" type="xs:int"/>
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RawUrl" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="File" nillable="true" type="tns:File"/>
+  <xs:complexType name="CommitStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Additions" type="xs:int"/>
+      <xs:element minOccurs="0" name="Deletions" type="xs:int"/>
+      <xs:element minOccurs="0" name="Total" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommitStats" nillable="true" type="tns:CommitStats"/>
+  <xs:complexType name="UserProjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveFlag" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Assignee" nillable="true" type="tns:Person"/>
+      <xs:element minOccurs="0" name="ModifiedDT" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Modifier" nillable="true" type="tns:Person"/>
+      <xs:element minOccurs="0" name="ProjectIDs" nillable="true" type="q1:ArrayOfint" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProjects" nillable="true" type="tns:UserProjects"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:34872/UserService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:complexType name="ArrayOfint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:34872/UserService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint></con:endpoints><con:operation id="4342859e-5e5d-40c3-8e53-662485c18e7d" isOneWay="false" action="http://tempuri.org/IUserService/deletePerson" name="deletePerson" bindingOperationName="deletePerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bc2f03aa-d5b3-44ca-93fe-9285b5784628" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:deletePerson>\r
+         <!--Optional:-->\r
+         <tem:userID>1005</tem:userID>\r
+      </tem:deletePerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/deletePerson"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="67120e5e-d105-4f48-bebf-465cc101865c" isOneWay="false" action="http://tempuri.org/IUserService/getCommits" name="getCommits" bindingOperationName="getCommits" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3d819929-8849-4a43-b01b-5101719eab19" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:getCommits>
+         <!--Optional:-->
+         <tem:ProjectName>ProjectAnalytics-UWB</tem:ProjectName>
+         <!--Optional:-->
+         <tem:ProjectOwner>UshaBGowda</tem:ProjectOwner>
+         <!--Optional:-->
+         <tem:BranchName>Assignment1</tem:BranchName>
+      </tem:getCommits>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommits"/><con:wsrmConfig version="1.2"/></con:call><con:call id="460e7f80-c715-46a9-9cfd-59f7566cf2ec" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>BrainGrid</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>UWB-Biocomputing</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>refactor-stable-cuda</tem:BranchName>\r
+      </tem:getCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommits"/><con:wsrmConfig version="1.2"/></con:call><con:call id="aa2079dc-2146-49e9-9576-04725a8ed7bc" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>octokit.net</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>octokit</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>master</tem:BranchName>\r
+      </tem:getCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommits"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2a85dd60-e082-441c-8d5d-e187019cf323" isOneWay="false" action="http://tempuri.org/IUserService/getContributors" name="getContributors" bindingOperationName="getContributors" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="92b6d13c-5948-4b2e-acf6-909b789ee107" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getContributors>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>BrainGrid</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>UWB-Biocomputing</tem:ProjectOwner>\r
+      </tem:getContributors>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getContributors"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e5febee2-1a5a-41f9-960c-3139e48d037d" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getContributors>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>ProjectAnalytics-UWB</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>UshaBGowda</tem:ProjectOwner>\r
+      </tem:getContributors>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getContributors"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a5fa693f-494c-49c8-b82d-2dd889e42239" isOneWay="false" action="http://tempuri.org/IUserService/getPeopleDetails" name="getPeopleDetails" bindingOperationName="getPeopleDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="52728457-b3f7-4990-a5fd-39ab1f8028cd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getPeopleDetails/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getPeopleDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5867018b-aab9-4680-a516-d0a2fdb1a0c7" isOneWay="false" action="http://tempuri.org/IUserService/getProjects" name="getProjects" bindingOperationName="getProjects" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5c640340-c6ed-4393-9d4b-e289cca5983e" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getProjects>\r
+         <!--Optional:-->\r
+         <tem:personID>1004</tem:personID>\r
+      </tem:getProjects>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getProjects"/><con:wsrmConfig version="1.2"/></con:call><con:call id="fc95f7f5-5498-4264-8062-1d96421f2229" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:getProjects>
+         <!--Optional:-->
+         <tem:personID>1006</tem:personID>
+      </tem:getProjects>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getProjects"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dc358522-a0f5-426f-a68e-6a3a39778814" isOneWay="false" action="http://tempuri.org/IUserService/setPerson" name="setPerson" bindingOperationName="setPerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="982a6bfd-3e0b-4a80-9251-f8d1e2610e83" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:setPerson>\r
+         <!--Optional:-->\r
+         <tem:newPerson>\r
+            <!--Optional:-->\r
+            <proj:EmailAddress>emily@uw.edu</proj:EmailAddress>\r
+            <!--Optional:-->\r
+            <proj:FirstName>Emily </proj:FirstName>\r
+           <proj:ID>-1</proj:ID>
+            <!--Optional:-->\r
+            <proj:LastName>Howell</proj:LastName>\r
+               <proj:LoginName>EmilyH</proj:LoginName>
+
+            <!--Optional:-->\r
+            <proj:Person_Address>\r
+               <!--Optional:-->\r
+               <proj:Address1>18115 Campus Way NE</proj:Address1>\r
+               <!--Optional:-->\r
+               <proj:Address2></proj:Address2>\r
+               <!--Optional:-->\r
+               <proj:City>Bothell</proj:City>\r
+               <!--Optional:-->\r
+               <proj:State>WA</proj:State>\r
+               <!--Optional:-->\r
+               <proj:ZIP>98011</proj:ZIP>\r
+            </proj:Person_Address>\r
+            <!--Optional:-->\r
+            <proj:RoleID>1</proj:RoleID>\r
+            <!--Optional:-->\r
+            <proj:userPassword>password</proj:userPassword>\r
+         </tem:newPerson>\r
+      </tem:setPerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/setPerson"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e14272cb-6497-46c7-94c9-c87a2e03ffd9" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:setPerson>\r
+         <!--Optional:-->\r
+         <tem:newPerson>\r
+            <!--Optional:-->\r
+            <proj:EmailAddress>Dennis@uw.edu</proj:EmailAddress>\r
+            <!--Optional:-->\r
+            <proj:FirstName>Dennis</proj:FirstName>\r
+            <!--Optional:-->\r
+            <proj:ID>-1</proj:ID>\r
+            <!--Optional:-->\r
+            <proj:LastName>Ritchie</proj:LastName>\r
+            <!--Optional:-->\r
+            <proj:LoginName>DennisR</proj:LoginName>\r
+            <!--Optional:-->\r
+            <proj:Person_Address>\r
+               <!--Optional:-->\r
+               <proj:Address1>18115 Campus Way NE</proj:Address1>\r
+               <!--Optional:-->\r
+               <proj:Address2></proj:Address2>\r
+               <!--Optional:-->\r
+               <proj:City>Bothell</proj:City>\r
+               <!--Optional:-->\r
+               <proj:State>WA</proj:State>\r
+               <!--Optional:-->\r
+               <proj:ZIP>98011</proj:ZIP>\r
+            </proj:Person_Address>\r
+            <!--Optional:-->\r
+            <proj:RoleID>2</proj:RoleID>\r
+            <!--Optional:-->\r
+            <proj:userPassword>password</proj:userPassword>\r
+         </tem:newPerson>\r
+      </tem:setPerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/setPerson"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c46161b5-480a-4ef4-b717-f74a07fad743" isOneWay="false" action="http://tempuri.org/IUserService/verifyAuth" name="verifyAuth" bindingOperationName="verifyAuth" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cf5e5f47-28b8-4faa-bf2d-212b7c037797" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:verifyAuth>\r
+         <!--Optional:-->\r
+         <tem:userID>EmilyH</tem:userID>\r
+         <!--Optional:-->\r
+         <tem:password>hello</tem:password>\r
+      </tem:verifyAuth>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/verifyAuth"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="baad7773-f2ea-4e41-a07b-684add4f9d2d" isOneWay="false" action="http://tempuri.org/IUserService/assignProjects" name="assignProjects" bindingOperationName="assignProjects" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37a3e200-8de3-4126-83a3-8a505ac57f73" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:assignProjects>\r
+         <!--Optional:-->\r
+         <tem:usrPrjs>\r
+            <!--Optional:-->\r
+            <proj:ActiveFlag>1</proj:ActiveFlag>\r
+            <!--Optional:-->\r
+            <proj:Assignee>\r
+               <!--Optional:-->\r
+           
+               <proj:ID>1004</proj:ID>\r
+               <!--Optional:-->\r
+          
+            </proj:Assignee>\r
+            
+            <!--Optional:-->\r
+            <proj:Modifier>\r
+               <!--Optional:-->\r
+              
+               <proj:ID>1004</proj:ID>\r
+               <!--Optional:-->\r
+           
+            </proj:Modifier>\r
+            <!--Optional:-->\r
+            <proj:ProjectIDs>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:int>1</arr:int>
+               <arr:int>2</arr:int>\r
+               <arr:int>3</arr:int>
+
+            </proj:ProjectIDs>\r
+         </tem:usrPrjs>\r
+      </tem:assignProjects>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/assignProjects"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c018ad47-84ff-4fba-8668-262a8bcb3268" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:assignProjects>\r
+         <!--Optional:-->\r
+         <tem:usrPrjs>\r
+            <!--Optional:-->\r
+            <proj:ActiveFlag>1</proj:ActiveFlag>\r
+            <!--Optional:-->
+            
+            <proj:Assignee>\r
+             <proj:ID>1006</proj:ID>\r
+               <!--Optional:--> 
+            </proj:Assignee>\r
+            
+           
+            <proj:Modifier>\r
+               <!--Optional:-->\r
+               <proj:ID>1004</proj:ID>\r
+            </proj:Modifier>\r
+            <!--Optional:-->\r
+            
+            <proj:ProjectIDs>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:int>2</arr:int>\r
+                <arr:int>3</arr:int>
+
+            </proj:ProjectIDs>\r
+         </tem:usrPrjs>\r
+      </tem:assignProjects>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/assignProjects"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6556b26a-1d37-4f15-a072-3d4128f4f0aa" isOneWay="false" action="http://tempuri.org/IUserService/getDeveloperCommits" name="getDeveloperCommits" bindingOperationName="getDeveloperCommits" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="078a2af0-7020-41ea-a7fa-adc085141332" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getDeveloperCommits>\r
+         <!--Optional:-->
+ 	    <tem:ProjectName>BrainGrid</tem:ProjectName>
+         <!--Optional:-->
+         <tem:ProjectOwner>UWB-Biocomputing</tem:ProjectOwner>
+         <!--Optional:-->
+         <tem:BranchName>refactor-stable-cuda</tem:BranchName>
+         <tem:devLoginName>stiber</tem:devLoginName>\r
+      </tem:getDeveloperCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getDeveloperCommits"/><con:wsrmConfig version="1.2"/></con:call><con:call id="db177fbb-ae9a-47ad-85e5-66eeb686dbbc" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getDeveloperCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>ProjectAnalytics-UWB</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>UshaBGowda</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>Assignment1</tem:BranchName>\r
+         <!--Optional:-->\r
+         <tem:devLoginName>UshaBGowda</tem:devLoginName>\r
+      </tem:getDeveloperCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getDeveloperCommits"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6126efac-4ead-404c-abb9-6a06fb9ff6e3" isOneWay="false" action="http://tempuri.org/IUserService/getCommitDetails" name="getCommitDetails" bindingOperationName="getCommitDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5088d35-c206-4765-b6b7-dd5b203c5aec" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommitDetails>\r
+         <!--Optional:-->\r
+         <tem:commitObj>\r
+            <proj:SHA>b052efcca529a45dbf7af8a47772741bd7f6a2a6</proj:SHA>\r
+         </tem:commitObj>\r
+         
+         <tem:projectObj>
+            <!--Optional:-->
+            <proj:Name>ProjectAnalytics-UWB</proj:Name>
+            <!--Optional:-->
+            <proj:Owner>UshaBGowda</proj:Owner>
+         </tem:projectObj>
+
+      </tem:getCommitDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommitDetails"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ff17d638-cce5-4005-ab27-2cb3ef1f9267" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommitDetails>\r
+         <!--Optional:-->\r
+         <tem:commitObj>\r
+            <!--Optional:-->\r
+            <proj:SHA>0499bb3a461c4a97cacd5d9f0c7a0d273bf8f5ee</proj:SHA>\r
+            <!--Optional:-->\r
+            </tem:commitObj>
+
+         <!--Optional:-->\r
+         <tem:projectObj>\r
+            <!--Optional:-->\r
+            <proj:Name>BrainGrid</proj:Name>\r
+            <!--Optional:-->\r
+            <proj:Owner>UWB-Biocomputing</proj:Owner>\r
+         </tem:projectObj>\r
+      </tem:getCommitDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommitDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="1814fd04-506c-439d-85e4-90d05aa94807" name="BasicHttpBinding_IUserService TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b1333907-6ffe-45de-b0d9-18bebd5e1284" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="deletePerson TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="f131f6cf-4792-44e7-97cd-09fb47d08462" name="deletePerson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>deletePerson</con:operation><con:request name="deletePerson" id="f0c21d2f-2b2e-4c39-a3b3-1a21605da5db"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:deletePerson>\r
+         <!--Optional:-->\r
+         <tem:userID>?</tem:userID>\r
+      </tem:deletePerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/deletePerson"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="47c8892d-b0be-4339-95df-460408c44e5b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getCommits TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="26c73720-4761-44b4-9b80-2a2a9a7b50ad" name="getCommits"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>getCommits</con:operation><con:request name="getCommits" id="9927cd0e-fd48-4d06-b47a-37b51321639c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>?</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>?</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>?</tem:BranchName>\r
+      </tem:getCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/getCommits"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bad98842-bf83-4fb2-b101-6ec22a020808" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getContributors TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="2d9705b8-deb9-4076-99b4-e8789bebc5ee" name="getContributors"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>getContributors</con:operation><con:request name="getContributors" id="a8f4b13e-e604-44bd-a066-970f7cac5dbd"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getContributors>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>?</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>?</tem:ProjectOwner>\r
+      </tem:getContributors>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/getContributors"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d39f4fbf-5574-4670-88b1-95f7968b5555" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPeopleDetails TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1296417b-aca7-4759-a8dd-996ebe32da9e" name="getPeopleDetails"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>getPeopleDetails</con:operation><con:request name="getPeopleDetails" id="1f8d953f-4af6-40ee-b63d-8b7e0e8044c3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getPeopleDetails/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/getPeopleDetails"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f9d47a85-8f1d-4b29-bcb4-48fe8626e536" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getPerson TestCase" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:testCase id="2c514696-d7ed-4656-b578-3bb46460b755" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getProjects TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="cb36856a-3f1c-463d-9d4c-94086dbeb138" name="getProjects"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>getProjects</con:operation><con:request name="getProjects" id="de1a3c07-36d4-472e-a633-a4ee9b012680"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getProjects/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/getProjects"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6dc3910e-ba7d-41b8-95ac-7178a0fbd70f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setPerson TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="4541b187-84cb-4c56-bff4-cbf12e95765b" name="setPerson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>setPerson</con:operation><con:request name="setPerson" id="d76e3d3f-73f7-4806-ac5b-f37992b75fe5"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:setPerson>\r
+         <!--Optional:-->\r
+         <tem:newPerson>\r
+            <!--Optional:-->\r
+            <proj:EmailAddress>?</proj:EmailAddress>\r
+            <!--Optional:-->\r
+            <proj:FirstName>?</proj:FirstName>\r
+            <!--Optional:-->\r
+            <proj:ID>?</proj:ID>\r
+            <!--Optional:-->\r
+            <proj:LastName>?</proj:LastName>\r
+            <!--Optional:-->\r
+            <proj:Person_Address>\r
+               <!--Optional:-->\r
+               <proj:Address1>?</proj:Address1>\r
+               <!--Optional:-->\r
+               <proj:Address2>?</proj:Address2>\r
+               <!--Optional:-->\r
+               <proj:City>?</proj:City>\r
+               <!--Optional:-->\r
+               <proj:State>?</proj:State>\r
+               <!--Optional:-->\r
+               <proj:ZIP>?</proj:ZIP>\r
+            </proj:Person_Address>\r
+            <!--Optional:-->\r
+            <proj:RoleID>?</proj:RoleID>\r
+            <!--Optional:-->\r
+            <proj:userPassword>?</proj:userPassword>\r
+         </tem:newPerson>\r
+      </tem:setPerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/setPerson"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="70fa995f-4397-4e90-9f2e-ca0f822e0b02" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="verifyAuth TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="10b5c98e-01d7-4c6b-aef5-229b3ae8cde2" name="verifyAuth"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IUserService</con:interface><con:operation>verifyAuth</con:operation><con:request name="verifyAuth" id="d25b72cd-a9e1-4f8d-8dcb-d8ea9931e138"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:verifyAuth>\r
+         <!--Optional:-->\r
+         <tem:userID>?</tem:userID>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+      </tem:verifyAuth>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IUserService/verifyAuth"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
