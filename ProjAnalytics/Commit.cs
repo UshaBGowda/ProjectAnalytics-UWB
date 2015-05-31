@@ -12,6 +12,8 @@ namespace ProjAnalytics
         public File[] Files { get;  set; }
         public CommitStats Stats { get;  set; }
 
+        public String SHA { get; set; }
+
         public DateTime CommitDT { get; set; }
     }
 }
