@@ -63,6 +63,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB_Comps\Procedures\spAssignProj.sql" />
     <Content Include="DB_Comps\Procedures\spGetProjects.sql" />
     <Content Include="DB_Comps\Procedures\spGet.sql" />
     <Content Include="DB_Comps\Procedures\spCreatePerson.sql" />

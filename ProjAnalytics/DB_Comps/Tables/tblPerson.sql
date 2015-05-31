@@ -1,6 +1,5 @@
 USE [UserAnalytics]
 GO
-
 BEGIN
 BEGIN TRANSACTION
 BEGIN TRY

@@ -7,7 +7,7 @@ namespace ProjAnalytics
 {
     public class Commit
     {
-        public string CommentsUrl { get;  set; }
+        public string Comments { get;  set; }
         public User Committer { get;  set; }
         public File[] Files { get;  set; }
         public CommitStats Stats { get;  set; }

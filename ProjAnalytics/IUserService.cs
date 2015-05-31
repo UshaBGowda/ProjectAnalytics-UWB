@@ -42,5 +42,8 @@ namespace ProjAnalytics
 
         [OperationContract]
         Commit[] getDeveloperCommits(string ProjectName, string ProjectOwner, string BranchName, string devLoginName);
+        [OperationContract]
+
+        Commit getCommitDetails(Commit commitObj, Project projectObj);
     }
 }

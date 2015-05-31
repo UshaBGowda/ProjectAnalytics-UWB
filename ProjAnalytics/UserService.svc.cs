@@ -25,8 +25,8 @@ namespace ProjAnalytics
         
         private GitHubClient initClient()
         {
-            var credentials =  new Credentials("9980f75a0db197489076a6729eda5f5892c9f7bc");
-            var connection = new Octokit.Connection(new Octokit.ProductHeaderValue("ProjectOmegatron"))
+            var credentials = new Credentials("d7487e65df80ef0f7afdd689d7211622d9b2db93");
+            var connection = new Octokit.Connection(new Octokit.ProductHeaderValue("ProjAnalyticsApp"))
             {
               Credentials = credentials
             };
@@ -61,16 +61,18 @@ namespace ProjAnalytics
 
                     Person pp = new Person
                     {
-                        ID = int.Parse(dt.Rows[0][0].ToString()),
-                        FirstName = dt.Rows[0][1].ToString(),
-                        LastName = dt.Rows[0][2].ToString(),
+                        ID = int.Parse(dt.Rows[0]["ID"].ToString()),
+                        FirstName = dt.Rows[0]["FirstName"].ToString(),
+                        LastName = dt.Rows[0]["LastName"].ToString(),
+                        LoginName = dt.Rows[0]["LoginName"].ToString(),
+                        RoleID = Int32.Parse(dt.Rows[0]["RoleID"].ToString()),
                         Person_Address = new Address
                         {
-                            Address1 = dt.Rows[0][5].ToString(),
-                            Address2 = dt.Rows[0][6].ToString(),
-                            City = dt.Rows[0][7].ToString(),
-                            State = dt.Rows[0][8].ToString(),
-                            ZIP = dt.Rows[0][9].ToString()
+                            Address1 = dt.Rows[0]["Address1"].ToString(),
+                            Address2 = dt.Rows[0]["Address2"].ToString(),
+                            City = dt.Rows[0]["City"].ToString(),
+                            State = dt.Rows[0]["State"].ToString(),
+                            ZIP = dt.Rows[0]["ZIP"].ToString()
                         }
                     };
                     return pp;
@@ -118,9 +120,36 @@ namespace ProjAnalytics
         }
 
 
-       public  bool assignProjects(UserProjects usrPrjs)
+       public bool assignProjects(UserProjects usrPrjs)
         {
-            return true;
+            try
+            {
+             
+            SqlParameter[] varParams = new SqlParameter[3];
+            SqlParameter inputParam = new SqlParameter();
+            GenericUtil<UserProjects> Util = new GenericUtil<UserProjects>();
+            inputParam.Value = Util.SerializeToString(usrPrjs);
+            inputParam.ParameterName = "@Input";
+            varParams[0] = inputParam;
+            Int32 retCode = -1;
+            string ErrMsg = "";
+            // varParams[0] = new SqlParameter{ParameterName="@Input",Value=stringwriter.ToString()};
+            varParams[1] = new SqlParameter { ParameterName = "@Error_Message", Direction = ParameterDirection.Output, Value = ErrMsg };
+            varParams[2] = new SqlParameter { ParameterName = "@Return_Code", Direction = ParameterDirection.ReturnValue, Value = retCode };
+            DataTable dt = _dbConnect.RunProcedureGetDataTable("spAssignProj", varParams);
+            ErrMsg = varParams[1].Value.ToString();
+            retCode = Int32.Parse(varParams[2].Value.ToString());
+
+        if (retCode == 1)
+                    return false;
+                else
+                    return true;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message.ToString());
+            }
         }
 
 
@@ -216,7 +245,8 @@ namespace ProjAnalytics
                 {
                     Commit objCommit = new Commit();
                     objCommit.CommitDT = DateTime.Now;
-                    objCommit.CommentsUrl=gC.CommentsUrl;
+                    objCommit.Comments = gC.Commit.Message;
+                    objCommit.SHA = gC.Sha.ToString();
                     if (gC.Committer != null)
                     {
                         objCommit.Committer = new User { Login = gC.Committer.Login, ID = gC.Committer.Id, AvatarURL = gC.Committer.AvatarUrl };
@@ -280,7 +310,7 @@ namespace ProjAnalytics
                    {
                        Commit objCommit = new Commit();
                        objCommit.CommitDT = DateTime.Now;
-                       objCommit.CommentsUrl = gC.CommentsUrl;
+                       objCommit.Comments = gC.Commit.Message;
                        if (gC.Committer != null)
                        {
                            objCommit.Committer = new User { Login = gC.Committer.Login, ID = gC.Committer.Id, AvatarURL = gC.Committer.AvatarUrl };
@@ -349,6 +379,56 @@ namespace ProjAnalytics
 
         }
 
+        public Commit getCommitDetails(Commit commitObj,Project projectObj)
+        {
+          try{
+                 GitHubClient client = initClient();
+                 RepositoryCommitsClient repComClient = new RepositoryCommitsClient(
+                     new ApiConnection(client.Connection));
+             
+
+
+                  var result1 = _util.getCommit(repComClient,projectObj.Owner,projectObj.Name,commitObj.SHA);
+                  var result = result1.Result;
+                  List<File> files = new List<File>();
+
+              foreach (GitHubCommitFile ghcFile in result.Files)
+              {
+                  File fl = new File
+                  {
+                      Additions = ghcFile.Additions,
+                      Changes = ghcFile.Changes,
+                      Deletions = ghcFile.Deletions,
+                      Filename = ghcFile.Filename,
+                      RawUrl = ghcFile.RawUrl,
+                      Status = ghcFile.Status
+                  };
+                  files.Add(fl);
+              }
+              commitObj.Files = files.ToArray<File>();
+              commitObj.Comments = result.Commit.Message;
+              commitObj.CommitDT = DateTime.Now;
+              commitObj.Committer = new User
+              {
+                  AvatarURL = result.Committer.AvatarUrl,
+                  ID = result.Committer.Id,
+                  Login = result.Committer.Login
+              };
+              commitObj.SHA = result.Sha.ToString();
+              commitObj.Stats = new CommitStats
+              {
+                  Additions = result.Stats.Additions,
+                  Deletions = result.Stats.Deletions,
+                  Total = result.Stats.Total
+              };
+              return commitObj;
+            }
+            catch (Exception ex)
+            {
+                return new Commit();
+            }
+        }
+
         public Project[] getProjects(int personID)
         {
             Project[] repos = new Project[3];
@@ -367,22 +447,26 @@ namespace ProjAnalytics
                 ErrMsg = varParams[1].Value.ToString();
                 retCode = Int32.Parse(varParams[2].Value.ToString());
 
+                int i = 0;
                 if (retCode == 0)
                 {
 
                     foreach (DataRow dr in dt.Rows)
                     {
 
-                        string projName = dt.Rows[0][1].ToString();
+                        string projName = dt.Rows[i][1].ToString();
 
-                        var searchRepositoriesRequest = new SearchRepositoriesRequest(projName)
+                        var searchRepositoriesRequest = new SearchRepositoriesRequest(projName);
+
+                         if(projName.ToLower().Contains("octokit") || projName.ToLower().Contains("project"))
                          {
-                             Language = Language.CSharp,
-                             Order = SortDirection.Descending,
-                             PerPage = 10
-                         };
+                             searchRepositoriesRequest.Language = Language.CSharp;
+                         }
+                             searchRepositoriesRequest.Order = SortDirection.Descending;
+                             searchRepositoriesRequest.PerPage = 10;
+                         
                         var result = _util.getRepos(_github, searchRepositoriesRequest).Result.Items[0];
-                        repos[0] = new Project
+                        repos[i] = new Project
                         {
                             CloneURL = result.CloneUrl,
                             CreatedDT = result.CreatedAt.ToLocalTime().DateTime,
@@ -392,8 +476,9 @@ namespace ProjAnalytics
                             Name = result.Name,
                             Owner = result.Owner.Login
                         };
+                        i++;
 
-                    };
+                    }
                     return repos;
                 }
                 else
@@ -520,7 +605,7 @@ namespace ProjAnalytics
                 try
                 {
                     commit = await repoClient.Get(owner, name, sha);
-
+                    
                     //var user = await github.User.Get("ushaBgowda");
                     return commit;
                 }
