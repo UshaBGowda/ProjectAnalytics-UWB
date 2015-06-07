@@ -526,6 +526,14 @@
          <tem:userID>1005</tem:userID>\r
       </tem:deletePerson>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/deletePerson"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a95217f4-ebab-48c0-a682-a904288c1068" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:deletePerson>\r
+         <!--Optional:-->\r
+         <tem:userID>1012</tem:userID>\r
+      </tem:deletePerson>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/deletePerson"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="67120e5e-d105-4f48-bebf-465cc101865c" isOneWay="false" action="http://tempuri.org/IUserService/getCommits" name="getCommits" bindingOperationName="getCommits" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3d819929-8849-4a43-b01b-5101719eab19" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
    <soapenv:Header/>
    <soapenv:Body>
@@ -562,6 +570,18 @@
          <tem:BranchName>master</tem:BranchName>\r
       </tem:getCommits>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommits"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6b687761-dada-476a-acd7-a7e19a240646" name="Request 4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>?</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>?</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>?</tem:BranchName>\r
+      </tem:getCommits>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommits"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2a85dd60-e082-441c-8d5d-e187019cf323" isOneWay="false" action="http://tempuri.org/IUserService/getContributors" name="getContributors" bindingOperationName="getContributors" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="92b6d13c-5948-4b2e-acf6-909b789ee107" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -582,7 +602,22 @@
          <tem:ProjectOwner>UshaBGowda</tem:ProjectOwner>\r
       </tem:getContributors>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getContributors"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a7d18eaf-cb96-4fdc-b636-0446e1e8084c" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getContributors>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>?</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>?</tem:ProjectOwner>\r
+      </tem:getContributors>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getContributors"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a5fa693f-494c-49c8-b82d-2dd889e42239" isOneWay="false" action="http://tempuri.org/IUserService/getPeopleDetails" name="getPeopleDetails" bindingOperationName="getPeopleDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="52728457-b3f7-4990-a5fd-39ab1f8028cd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getPeopleDetails/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getPeopleDetails"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bc5d297c-4436-4d5f-a611-11e7de72037c" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:getPeopleDetails/>\r
@@ -603,6 +638,14 @@
          <tem:personID>1006</tem:personID>
       </tem:getProjects>
    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getProjects"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bc580cd6-1186-4b00-ab34-33e8d31b82d1" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getProjects>\r
+         <!--Optional:-->\r
+         <tem:personID>1007</tem:personID>\r
+      </tem:getProjects>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getProjects"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dc358522-a0f5-426f-a68e-6a3a39778814" isOneWay="false" action="http://tempuri.org/IUserService/setPerson" name="setPerson" bindingOperationName="setPerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="982a6bfd-3e0b-4a80-9251-f8d1e2610e83" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -684,6 +727,16 @@
          <tem:password>hello</tem:password>\r
       </tem:verifyAuth>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/verifyAuth"/><con:wsrmConfig version="1.2"/></con:call><con:call id="46234d65-dc7b-4b2e-b3c0-60689afa2506" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:verifyAuth>\r
+         <!--Optional:-->\r
+         <tem:userID>?</tem:userID>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+      </tem:verifyAuth>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/verifyAuth"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="baad7773-f2ea-4e41-a07b-684add4f9d2d" isOneWay="false" action="http://tempuri.org/IUserService/assignProjects" name="assignProjects" bindingOperationName="assignProjects" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37a3e200-8de3-4126-83a3-8a505ac57f73" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -696,7 +749,7 @@
             <proj:Assignee>\r
                <!--Optional:-->\r
            
-               <proj:ID>1004</proj:ID>\r
+               <proj:ID>1010</proj:ID>\r
                <!--Optional:-->\r
           
             </proj:Assignee>\r
@@ -705,7 +758,7 @@
             <proj:Modifier>\r
                <!--Optional:-->\r
               
-               <proj:ID>1004</proj:ID>\r
+               <proj:ID>1010</proj:ID>\r
                <!--Optional:-->\r
            
             </proj:Modifier>\r
@@ -731,14 +784,14 @@
             <!--Optional:-->
             
             <proj:Assignee>\r
-             <proj:ID>1006</proj:ID>\r
+             <proj:ID>1011</proj:ID>\r
                <!--Optional:--> 
             </proj:Assignee>\r
             
            
             <proj:Modifier>\r
                <!--Optional:-->\r
-               <proj:ID>1004</proj:ID>\r
+               <proj:ID>1010</proj:ID>\r
             </proj:Modifier>\r
             <!--Optional:-->\r
             
@@ -747,6 +800,84 @@
                <arr:int>2</arr:int>\r
                 <arr:int>3</arr:int>
 
+            </proj:ProjectIDs>\r
+         </tem:usrPrjs>\r
+      </tem:assignProjects>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/assignProjects"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f7f53443-e5f0-46e5-9b11-6a4b87c97db9" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:assignProjects>\r
+         <!--Optional:-->\r
+         <tem:usrPrjs>\r
+            <!--Optional:-->\r
+            <proj:ActiveFlag>?</proj:ActiveFlag>\r
+            <!--Optional:-->\r
+            <proj:Assignee>\r
+               <!--Optional:-->\r
+               <proj:EmailAddress>?</proj:EmailAddress>\r
+               <!--Optional:-->\r
+               <proj:FirstName>?</proj:FirstName>\r
+               <!--Optional:-->\r
+               <proj:ID>?</proj:ID>\r
+               <!--Optional:-->\r
+               <proj:LastName>?</proj:LastName>\r
+               <!--Optional:-->\r
+               <proj:LoginName>?</proj:LoginName>\r
+               <!--Optional:-->\r
+               <proj:Person_Address>\r
+                  <!--Optional:-->\r
+                  <proj:Address1>?</proj:Address1>\r
+                  <!--Optional:-->\r
+                  <proj:Address2>?</proj:Address2>\r
+                  <!--Optional:-->\r
+                  <proj:City>?</proj:City>\r
+                  <!--Optional:-->\r
+                  <proj:State>?</proj:State>\r
+                  <!--Optional:-->\r
+                  <proj:ZIP>?</proj:ZIP>\r
+               </proj:Person_Address>\r
+               <!--Optional:-->\r
+               <proj:RoleID>?</proj:RoleID>\r
+               <!--Optional:-->\r
+               <proj:userPassword>?</proj:userPassword>\r
+            </proj:Assignee>\r
+            <!--Optional:-->\r
+            <proj:ModifiedDT>?</proj:ModifiedDT>\r
+            <!--Optional:-->\r
+            <proj:Modifier>\r
+               <!--Optional:-->\r
+               <proj:EmailAddress>?</proj:EmailAddress>\r
+               <!--Optional:-->\r
+               <proj:FirstName>?</proj:FirstName>\r
+               <!--Optional:-->\r
+               <proj:ID>?</proj:ID>\r
+               <!--Optional:-->\r
+               <proj:LastName>?</proj:LastName>\r
+               <!--Optional:-->\r
+               <proj:LoginName>?</proj:LoginName>\r
+               <!--Optional:-->\r
+               <proj:Person_Address>\r
+                  <!--Optional:-->\r
+                  <proj:Address1>?</proj:Address1>\r
+                  <!--Optional:-->\r
+                  <proj:Address2>?</proj:Address2>\r
+                  <!--Optional:-->\r
+                  <proj:City>?</proj:City>\r
+                  <!--Optional:-->\r
+                  <proj:State>?</proj:State>\r
+                  <!--Optional:-->\r
+                  <proj:ZIP>?</proj:ZIP>\r
+               </proj:Person_Address>\r
+               <!--Optional:-->\r
+               <proj:RoleID>?</proj:RoleID>\r
+               <!--Optional:-->\r
+               <proj:userPassword>?</proj:userPassword>\r
+            </proj:Modifier>\r
+            <!--Optional:-->\r
+            <proj:ProjectIDs>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:int>?</arr:int>\r
             </proj:ProjectIDs>\r
          </tem:usrPrjs>\r
       </tem:assignProjects>\r
@@ -776,6 +907,20 @@
          <tem:BranchName>Assignment1</tem:BranchName>\r
          <!--Optional:-->\r
          <tem:devLoginName>UshaBGowda</tem:devLoginName>\r
+      </tem:getDeveloperCommits>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getDeveloperCommits"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2f0072ba-2e9f-48e1-95f1-3c945eb27ee4" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getDeveloperCommits>\r
+         <!--Optional:-->\r
+         <tem:ProjectName>?</tem:ProjectName>\r
+         <!--Optional:-->\r
+         <tem:ProjectOwner>?</tem:ProjectOwner>\r
+         <!--Optional:-->\r
+         <tem:BranchName>?</tem:BranchName>\r
+         <!--Optional:-->\r
+         <tem:devLoginName>?</tem:devLoginName>\r
       </tem:getDeveloperCommits>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getDeveloperCommits"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6126efac-4ead-404c-abb9-6a06fb9ff6e3" isOneWay="false" action="http://tempuri.org/IUserService/getCommitDetails" name="getCommitDetails" bindingOperationName="getCommitDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5088d35-c206-4765-b6b7-dd5b203c5aec" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
@@ -813,6 +958,74 @@
             <proj:Name>BrainGrid</proj:Name>\r
             <!--Optional:-->\r
             <proj:Owner>UWB-Biocomputing</proj:Owner>\r
+         </tem:projectObj>\r
+      </tem:getCommitDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IUserService/getCommitDetails"/><con:wsrmConfig version="1.2"/></con:call><con:call id="312d6e12-d207-4ffa-8456-4139b49a4fbe" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:34872/UserService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:proj="http://schemas.datacontract.org/2004/07/ProjAnalytics">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:getCommitDetails>\r
+         <!--Optional:-->\r
+         <tem:commitObj>\r
+            <!--Optional:-->\r
+            <proj:Comments>?</proj:Comments>\r
+            <!--Optional:-->\r
+            <proj:CommitDT>?</proj:CommitDT>\r
+            <!--Optional:-->\r
+            <proj:Committer>\r
+               <!--Optional:-->\r
+               <proj:AvatarURL>?</proj:AvatarURL>\r
+               <!--Optional:-->\r
+               <proj:ID>?</proj:ID>\r
+               <!--Optional:-->\r
+               <proj:Login>?</proj:Login>\r
+            </proj:Committer>\r
+            <!--Optional:-->\r
+            <proj:Files>\r
+               <!--Zero or more repetitions:-->\r
+               <proj:File>\r
+                  <!--Optional:-->\r
+                  <proj:Additions>?</proj:Additions>\r
+                  <!--Optional:-->\r
+                  <proj:Changes>?</proj:Changes>\r
+                  <!--Optional:-->\r
+                  <proj:Deletions>?</proj:Deletions>\r
+                  <!--Optional:-->\r
+                  <proj:Filename>?</proj:Filename>\r
+                  <!--Optional:-->\r
+                  <proj:RawUrl>?</proj:RawUrl>\r
+                  <!--Optional:-->\r
+                  <proj:Status>?</proj:Status>\r
+               </proj:File>\r
+            </proj:Files>\r
+            <!--Optional:-->\r
+            <proj:SHA>?</proj:SHA>\r
+            <!--Optional:-->\r
+            <proj:Stats>\r
+               <!--Optional:-->\r
+               <proj:Additions>?</proj:Additions>\r
+               <!--Optional:-->\r
+               <proj:Deletions>?</proj:Deletions>\r
+               <!--Optional:-->\r
+               <proj:Total>?</proj:Total>\r
+            </proj:Stats>\r
+         </tem:commitObj>\r
+         <!--Optional:-->\r
+         <tem:projectObj>\r
+            <!--Optional:-->\r
+            <proj:CloneURL>?</proj:CloneURL>\r
+            <!--Optional:-->\r
+            <proj:CreatedDT>?</proj:CreatedDT>\r
+            <!--Optional:-->\r
+            <proj:DefaultBranch>?</proj:DefaultBranch>\r
+            <!--Optional:-->\r
+            <proj:ID>?</proj:ID>\r
+            <!--Optional:-->\r
+            <proj:LastCommitDT>?</proj:LastCommitDT>\r
+            <!--Optional:-->\r
+            <proj:Name>?</proj:Name>\r
+            <!--Optional:-->\r
+            <proj:Owner>?</proj:Owner>\r
          </tem:projectObj>\r
       </tem:getCommitDetails>\r
    </soapenv:Body>\r

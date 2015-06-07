@@ -63,6 +63,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseSetUpScripts\DB_CreateDatabase.sql" />
+    <Content Include="DatabaseSetUpScripts\DB_CreateTblsQueries.sql" />
     <Content Include="DB_Comps\Procedures\spAssignProj.sql" />
     <Content Include="DB_Comps\Procedures\spGetProjects.sql" />
     <Content Include="DB_Comps\Procedures\spGet.sql" />
@@ -96,9 +98,7 @@
       <DependentUpon>UserService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
