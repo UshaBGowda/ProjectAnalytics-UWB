@@ -1,4 +1,4 @@
-﻿//Third Checkin
+﻿//Webservice for Project manager analytical tool
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +16,13 @@ using System.Configuration;
 
 namespace ProjAnalytics
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "UserService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select UserService.svc or UserService.svc.cs at the Solution Explorer and start debugging.
-    public class UserService : IUserService
+      public class UserService : IUserService
     {
         private DBConnect _dbConnect = new DBConnect();
         asyncUtil _util = new asyncUtil();
         GitHubClient _github = new GitHubClient(new ProductHeaderValue("ProjAnalyticsApp"));
         
+          //This function sets up configuraton to connect to github which connectd to github open API
         private GitHubClient initClient()
         {
             string strToken = ConfigurationManager.AppSettings["GitHubToken"];
@@ -37,6 +36,8 @@ namespace ProjAnalytics
             return octokitClient;
         }
 
+
+          //This function takes person object from UI and creates user information in database
         public Person setPerson(Person newPerson)
         {
             try
@@ -50,7 +51,6 @@ namespace ProjAnalytics
                 Int32 retCode = -1;
                 Int32 personID = -1;
                 string ErrMsg = "";
-                // varParams[0] = new SqlParameter{ParameterName="@Input",Value=stringwriter.ToString()};
                 varParams[1] = new SqlParameter { ParameterName = "@Error_Message", Direction = ParameterDirection.Output, Value = ErrMsg };
                 varParams[2] = new SqlParameter { ParameterName = "@PersonID", Direction = ParameterDirection.Output, Value = personID };
                 varParams[3] = new SqlParameter { ParameterName = "@Return_Code", Direction = ParameterDirection.ReturnValue, Value = retCode };
@@ -93,7 +93,7 @@ namespace ProjAnalytics
 
 
 
-
+          //This funstion takes userID as the input parameter and deletes corresponding user record in database
         public bool deletePerson(int userID)
         {
             try
@@ -123,6 +123,8 @@ namespace ProjAnalytics
         }
 
 
+          //This function takes userprojects object as the parameter which contains information about 
+          //which projects to assign to user. The function thus stores the corresponding information in database
        public bool assignProjects(UserProjects usrPrjs)
         {
             try
@@ -136,7 +138,6 @@ namespace ProjAnalytics
             varParams[0] = inputParam;
             Int32 retCode = -1;
             string ErrMsg = "";
-            // varParams[0] = new SqlParameter{ParameterName="@Input",Value=stringwriter.ToString()};
             varParams[1] = new SqlParameter { ParameterName = "@Error_Message", Direction = ParameterDirection.Output, Value = ErrMsg };
             varParams[2] = new SqlParameter { ParameterName = "@Return_Code", Direction = ParameterDirection.ReturnValue, Value = retCode };
             DataTable dt = _dbConnect.RunProcedureGetDataTable("spAssignProj", varParams);
@@ -157,7 +158,8 @@ namespace ProjAnalytics
 
 
 
-
+          //This function takes userID and corresponding password as the arguments.
+          //It then verifys the authentication for the user based on the password stored in database
         public bool verifyAuth(string userID, string password)
         {
             try
@@ -188,6 +190,7 @@ namespace ProjAnalytics
         }
 
 
+          //This function returns the list of users in the database
         public Person[] getPeopleDetails()
         {
             SqlParameter[] param = new SqlParameter[0];
@@ -218,6 +221,7 @@ namespace ProjAnalytics
 
 
 
+          //This function returns list of commits for a particular project name, project owner and branch name
        public Commit[] getCommits(string ProjectName, string ProjectOwner, string BranchName)
         {
             
@@ -281,6 +285,8 @@ namespace ProjAnalytics
             }
         }
 
+
+          //This function returns list of commits done by a developer given project name, branch name and project owner
        public Commit[] getDeveloperCommits(string ProjectName, string ProjectOwner, string BranchName, string devLoginName)
        {
 
@@ -346,6 +352,9 @@ namespace ProjAnalytics
                return commits.ToArray();
            }
        }
+
+
+          //This function lists all the contributors given project name and project owner
         public User[] getContributors(string ProjectName, string ProjectOwner)
         {
             List<User> Users = new List<User>();
@@ -371,6 +380,7 @@ namespace ProjAnalytics
 
         }
 
+          //This function gives details of Individual commit
         public Commit getCommitDetails(Commit commitObj,Project projectObj)
         {
           try{
@@ -421,6 +431,8 @@ namespace ProjAnalytics
             }
         }
 
+
+          //This function lists the projects assigned for user
         public Project[] getProjects(int personID)
         {
             Project[] repos = new Project[3];
@@ -486,50 +498,8 @@ namespace ProjAnalytics
         }
                 
     
-                //searchRepositoriesRequest = new SearchRepositoriesRequest("braingrid")
-                //{
-                //    Order = SortDirection.Descending,
-                //    PerPage = 10
-                //};
-                //result = _util.getRepos(_github, searchRepositoriesRequest).Result.Items[0];
-                //repos[1] = new Project
-                //{
-                //    CloneURL = result.CloneUrl,
-                //    CreatedDT = result.CreatedAt.ToLocalTime().DateTime,
-                //    DefaultBranch = result.DefaultBranch,
-                //    ID = result.Id,
-                //    LastCommitDT = result.PushedAt.Value.ToLocalTime().DateTime,
-                //    Name = result.Name,
-                //    Owner = result.Owner.Login
-                //};
-                //searchRepositoriesRequest = new SearchRepositoriesRequest("octokit.net")
-                //{
-                //    Order = SortDirection.Descending,
-                //    PerPage = 10
-                //};
-                //result = _util.getRepos(_github, searchRepositoriesRequest).Result.Items[0];
-                //repos[2] = new Project
-                //{
-                //    CloneURL = result.CloneUrl,
-                //    CreatedDT = result.CreatedAt.ToLocalTime().DateTime,
-                //    DefaultBranch = result.DefaultBranch,
-                //    ID = result.Id,
-                //    LastCommitDT = result.PushedAt.Value.ToLocalTime().DateTime,
-                //    Name = result.Name,
-                //    Owner = result.Owner.Login
-                //};
-
-                //return repos;//.ToList<Repository>();
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        string errMsg = ex.Message.ToString();
-        //        return repos;//.ToList<Repository>();
-        //    }
-
-        //}
-
-
+                
+          //Utility class to serialize 
         public class GenericUtil<T>
         {
 

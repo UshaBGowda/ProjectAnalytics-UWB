@@ -61,6 +61,8 @@ BEGIN
                               
             BEGIN TRY
 
+			delete A from dbo.tblAddress AS A JOIN dbo.tblPerson AS P ON  A.AddressID = P.AddressID where P.ID =  @Input;
+
 			delete from dbo.tblPerson where ID =  @Input;
 			SELECT * from dbo.tblPerson
             
