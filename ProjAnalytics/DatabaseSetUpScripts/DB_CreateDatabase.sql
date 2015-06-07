@@ -5,9 +5,9 @@ GO
 CREATE DATABASE [UserAnalytics]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'UserAnalytics', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\UserAnalytics.mdf' , SIZE = 6848KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
+( NAME = N'UserAnalytics', FILENAME = N'C:\database\UserAnalytics.mdf' , SIZE = 6848KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
  LOG ON 
-( NAME = N'UserAnalytics_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\UserAnalytics_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+( NAME = N'UserAnalytics_log', FILENAME = N'C:\database\UserAnalytics_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 
 ALTER DATABASE [UserAnalytics] SET COMPATIBILITY_LEVEL = 110
