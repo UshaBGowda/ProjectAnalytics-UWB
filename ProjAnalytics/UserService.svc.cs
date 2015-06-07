@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 using System.Xml;
 using Octokit;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace ProjAnalytics
 {
@@ -25,7 +26,9 @@ namespace ProjAnalytics
         
         private GitHubClient initClient()
         {
-            var credentials = new Credentials("6dda46d30e7aac78a2c48ce5baf1a9a0ffd302b1");
+            string strToken = ConfigurationManager.AppSettings["GitHubToken"];
+            var credentials = new Credentials(strToken);
+            
             var connection = new Octokit.Connection(new Octokit.ProductHeaderValue("ProjAnalyticsApp"))
             {
               Credentials = credentials
